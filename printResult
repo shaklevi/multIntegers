@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'RESULT')
+    }
+
+    stages {
+        stage('Use result') {
+            steps {
+                echo "Received result: ${params.RESULT}"
+            }
+        }
+    }
+}

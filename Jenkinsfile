@@ -31,6 +31,10 @@ pipeline {
                     // Example operation: Adding the numbers together
                     def result = num1 * num2
                     echo "The multiplication of ${num1} * ${num2} is: ${result}"
+                     build job: 'printResult',
+                          parameters: [
+                              string(name: 'RESULT', value: result.toString())
+                          ]
                 }
             }
         }
